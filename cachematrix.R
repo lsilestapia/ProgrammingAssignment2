@@ -3,8 +3,8 @@
 # The exercise demonstrates closures + caching in R
 
 ## Write a short comment describing this function
-# builds the infrastructure (storage + methods).
-makeCacheMatrix <- function(x = matrix(numeric(0), nrow = 0, ncol = 0)) {
+# "It builds the infrastructure: (storage + methods)."
+makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
   set <- function(y) {
     x <<- y
@@ -20,7 +20,7 @@ makeCacheMatrix <- function(x = matrix(numeric(0), nrow = 0, ncol = 0)) {
 
 
 ## Write a short comment describing this function
-#logical part, it calculate if needed, otherwise reuse cache.
+#"It computes the inverse if not cached, otherwise retrieves the stored result."
 cacheSolve <- function(x, ...) {
   m <- x$getinverse()
   if(!is.null(m)) {
